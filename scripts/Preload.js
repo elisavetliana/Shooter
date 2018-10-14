@@ -1,6 +1,6 @@
 var PreloadState = {
 	preload: function(){
-		this.load.baseURL = 'https://XristosTafarlis.github.io/Shooter/';
+		this.load.baseURL = 'https://elisavetliana.github.io/Shooter/';
 		this.load.crossOrigin = 'anonymous';
 		
 		//ionio logo
