@@ -9,7 +9,7 @@ var BootState = {
 	preload: function(){
 		//loading preload images
 		this.load.image('loadingBar','assets/boot/loadingBar.png');
-		this.load.image('ionio_logo','assets/boot/ionio_logo.jpg');
+		this.load.image('logo','assets/boot/logo.jpg');
 	},
 	create: function(){
 		this.state.start('PreloadState');
