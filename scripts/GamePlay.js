@@ -30,7 +30,7 @@ var GamePlay = {
 		player.body.drag.setTo(DRAG, DRAG);
 
 		//Enemies 1
-		enemies1 = game.add.group();
+		/*enemies1 = game.add.group();
 		enemies1.enableBody = true;
 		enemies1.physicsBodyType = Phaser.Physics.ARCADE;
 		enemies1.createMultiple(5, 'enemy1');
@@ -46,7 +46,8 @@ var GamePlay = {
 		});
 
 		launchEnemies1();
-
+		*/
+		
 		//  And some controls to play the game with
 		cursors = game.input.keyboard.createCursorKeys();
 		fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
