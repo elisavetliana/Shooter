@@ -2,7 +2,7 @@ var MainMenu = {
 	create: function(){
 		this.stage.backgroundColor = '#000020';
 
-		//Creating Super Mario
+		//Creating Title
 		var Shooter = game.add.image(400, 80, 'title');
 		Shooter.scale.set(2, 2);
 		Shooter.anchor.set(0.5, 0.5);
