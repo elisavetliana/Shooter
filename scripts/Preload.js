@@ -18,7 +18,7 @@ var PreloadState = {
 		this.load.audio('gun1', 'sounds/gun1.mp3',);
 		
 		//Image preloads
-		this.load.image('starfield', 'assets/starfield.png');
+		this.load.image('starfield', 'assets/starfield2.png');
 		this.load.image('ship', 'assets/ship.png');
 		this.load.image('bullet', 'assets/bullets/bullet.png');
 		this.load.image('title', 'assets/title.png');
