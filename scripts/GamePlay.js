@@ -67,7 +67,7 @@ var GamePlay = {
 	update: function() {
 
 		//  Scroll the background
-		starfield.tilePosition.x -= 2;
+		//starfield.tilePosition.x -= 2;
 
 		//  Reset the player, then check for movement keys
 		player.body.acceleration.y = 0;
