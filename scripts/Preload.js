@@ -19,7 +19,7 @@ var PreloadState = {
 		
 		//Image preloads
 		this.load.image('starfield', 'assets/starfield2.png');
-		this.load.image('ship', 'assets/ship.png');
+		this.load.image('ship', 'assets/ship1.png');
 		this.load.image('bullet', 'assets/bullets/bullet.png');
 		this.load.image('title', 'assets/title.png');
 		this.load.image('lvl1', 'assets/levels/level1.png');
