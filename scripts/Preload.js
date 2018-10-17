@@ -3,7 +3,7 @@ var PreloadState = {
 		this.load.baseURL = 'https://elisavetliana.github.io/Shooter/';
 		this.load.crossOrigin = 'anonymous';
 		
-		//ionio logo
+		//Loading logo
 		var logo = this.add.sprite(this.game.world.centerX, this.game.world.centerY - 32, 'logo');
 		logo.anchor.set(0.5, 0.5);
 		logo.scale.set(0.75);
