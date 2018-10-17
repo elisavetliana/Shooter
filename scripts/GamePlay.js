@@ -26,9 +26,7 @@ var GamePlay = {
 		//  The hero!
 		player = game.add.sprite(100, game.height / 2, 'ship');
 		player.anchor.setTo(0.5, 0.5);
-		player.scale.setTo (0.5, 0.5);
 		game.physics.enable(player, Phaser.Physics.ARCADE);
-		player.body.setSize(player.width / 2, player.height / 2);
 		player.body.maxVelocity.setTo(MAXSPEED, MAXSPEED);
 		player.body.drag.setTo(DRAG, DRAG);
 
