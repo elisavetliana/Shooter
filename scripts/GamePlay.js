@@ -25,7 +25,7 @@ var GamePlay = {
 		//  The hero!
 		player = game.add.sprite(100, game.height / 2, 'ship');
 		player.anchor.setTo(0.5, 0.5);
-		player.scale.setTo (0.3 , 0.3);
+		player.scale.setTo (0.5 , 0.5);
 		game.physics.enable(player, Phaser.Physics.ARCADE);
 		player.body.maxVelocity.setTo(MAXSPEED, MAXSPEED);
 		player.body.drag.setTo(DRAG, DRAG);
@@ -37,8 +37,8 @@ var GamePlay = {
 		enemies1.createMultiple(5, 'enemy1');
 		enemies1.setAll('anchor.x', 0.5);
 		enemies1.setAll('anchor.y', 0.5);
-		enemies1.setAll('scale.x', 0.75);
-		enemies1.setAll('scale.y', 0.75);
+		enemies1.setAll('scale.x', 0.1);
+		enemies1.setAll('scale.y', 0.1);
 		enemies1.forEach(function(enemy){
 			addEnemyEmitterTrail(enemy);
 			enemy.events.onKilled.add(function(){
