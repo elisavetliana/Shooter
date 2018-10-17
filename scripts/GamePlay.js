@@ -1,6 +1,7 @@
 var GamePlay = {
 	create: function(){
 		//Sounds
+		explosionSound = game.add.audio('explosionSound');
 		music = game.add.audio('bgm');
 		gun1 = game.add.audio('gun1');
 
@@ -37,8 +38,8 @@ var GamePlay = {
 		enemies1.createMultiple(5, 'enemy1');
 		enemies1.setAll('anchor.x', 0.5);
 		enemies1.setAll('anchor.y', 0.5);
-		enemies1.setAll('scale.x', 0.1);
-		enemies1.setAll('scale.y', 0.1);
+		enemies1.setAll('scale.x', 0.25);
+		enemies1.setAll('scale.y', 0.25);
 		enemies1.forEach(function(enemy){
 			addEnemyEmitterTrail(enemy);
 			enemy.events.onKilled.add(function(){
