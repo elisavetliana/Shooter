@@ -29,7 +29,6 @@ function launchEnemies1() {
 		enemy.body.velocity.y = game.rnd.integerInRange(-200, 200);
 		enemy.body.velocity.x = -300;
 		enemy.body.drag.y = 100;
-		console.log("Enemy Spawned");
 
 		enemy.trail.start(false, 800, 1);
 
