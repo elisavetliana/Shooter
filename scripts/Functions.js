@@ -65,7 +65,7 @@ function shipCollide(player, enemy) {
 	explosion.body.velocity.y = enemy.body.velocity.y;
 	explosion.alpha = 0.7;
 	explosion.play('explosion', 30, false, true);
-	explosionSound.play('',0,0.5,false);
+	explosionSound.play('',0,1,false);
 	enemy.kill();
 }
 
@@ -75,7 +75,7 @@ function hitEnemy(enemy, bullet) {
 	explosion.body.velocity.y = enemy.body.velocity.y;
 	explosion.alpha = 0.7;
 	explosion.play('explosion', 30, false, true);
-	explosionSound.play('',0,0.5,false);
+	explosionSound.play('',0,1,false);
 	enemy.kill();
 	bullet.kill()
 }
