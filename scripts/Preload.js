@@ -14,6 +14,7 @@ var PreloadState = {
 		this.load.setPreloadSprite(loadingBar);
 		
 		//Sound preloads
+		this.load.audio('explosionSound', ['sounds/explosion.mp3', 'sounds/explosion.ogg']);
 		this.load.audio('bgm', 'sounds/bgm.mp3');
 		this.load.audio('gun1', 'sounds/gun1.mp3',);
 		
