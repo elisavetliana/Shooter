@@ -30,7 +30,7 @@ var GamePlay = {
 		player.body.drag.setTo(DRAG, DRAG);
 
 		//Enemies 1
-		/*enemies1 = game.add.group();
+		enemies1 = game.add.group();
 		enemies1.enableBody = true;
 		enemies1.physicsBodyType = Phaser.Physics.ARCADE;
 		enemies1.createMultiple(5, 'enemy1');
@@ -46,7 +46,7 @@ var GamePlay = {
 		});
 
 		launchEnemies1();
-		*/
+		
 		
 		//  And some controls to play the game with
 		cursors = game.input.keyboard.createCursorKeys();
@@ -62,6 +62,17 @@ var GamePlay = {
 		shipTrail.setAlpha(1, 0.01, 800);
 		shipTrail.setScale(0.05, 0.4, 0.05, 0.4, 2000, Phaser.Easing.Quintic.Out);
 		shipTrail.start(false, 5000, 10);
+		
+		//  An explosion pool
+		explosions = game.add.group();
+		explosions.enableBody = true;
+		explosions.physicsBodyType = Phaser.Physics.ARCADE;
+		explosions.createMultiple(30, 'explosion');
+		explosions.setAll('anchor.x', 0.5);
+		explosions.setAll('anchor.y', 0.5);
+		explosions.forEach( function(explosion) {
+			explosion.animations.add('explosion');
+    		});
 	},
 
 	update: function() {
