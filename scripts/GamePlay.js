@@ -28,7 +28,7 @@ var GamePlay = {
 		player.anchor.setTo(0.5, 0.5);
 		player.scale.setTo (0.5, 0.5);
 		game.physics.enable(player, Phaser.Physics.ARCADE);
-		player.body.setSize(40, 18);
+		player.body.setSize(player.height / 2, player.height / 2);
 		player.body.maxVelocity.setTo(MAXSPEED, MAXSPEED);
 		player.body.drag.setTo(DRAG, DRAG);
 
