@@ -143,6 +143,10 @@ var GamePlay = {
 		//  Keep the shipTrail lined up with the ship
 		shipTrail.y = player.y;
 		shipTrail.x = player.x - 20;
+		
+		//  Check collisions
+		game.physics.arcade.overlap(player, enemies1, shipCollide, null, this);
+		game.physics.arcade.overlap(enemies1, bullets, hitEnemy, null, this);
 
 	}
 }
