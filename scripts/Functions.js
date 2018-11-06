@@ -45,7 +45,47 @@ function launchEnemies1() {
 	}
 
 	//  Send another enemy soon
-	game.time.events.add(game.rnd.integerInRange(300, 3000), launchEnemies1);
+	Enemy1Timer = game.time.events.add(game.rnd.integerInRange(300, 3000), launchEnemies1);
+}
+
+function launchEnemies2() {
+	var startingY = game.rnd.integerInRange(100, game.height - 100);
+	var horizontalSpeed = -180;
+	var spread = 60;
+	var frequency = 70;
+	var horizontalSpacing = 70;
+	var numEnemiesInWave = 5;
+	var timeBetweenWaves = 7000;
+
+	//  Launch wave
+	for (var i = 0; i < numEnemiesInWave; i++) {
+		var enemy = enemies2.getFirstExists(false);
+		if (enemy) {
+			enemy.startingY = startingY;
+			enemy.reset(1200 + horizontalSpacing * i, game.height / 2);
+			enemy.body.velocity.x = horizontalSpeed;
+
+			//  Update function for each enemy
+			enemy.update = function(){
+
+				//  Wave movement
+				this.body.y = this.startingY + Math.sin((this.x) / frequency) * spread;
+				
+				//  Squish and rotate ship for illusion of "banking"
+				bank = Math.cos((this.x + 60) / frequency)
+				this.scale.y = 0.5 - Math.abs(bank) / 8;
+				this.angle = 180 - bank * 2;
+				
+				//  Kill enemies once they go off screen
+				if (this.x < -200) {
+					this.kill();
+				}
+			};
+		}
+	}
+
+	//  Send another wave soon
+	Enemy2Timer = game.time.events.add(timeBetweenWaves, launchEnemies2);
 }
 
 function addEnemyEmitterTrail(enemy) {
@@ -65,8 +105,11 @@ function shipCollide(player, enemy) {
 	explosion.body.velocity.y = enemy.body.velocity.y;
 	explosion.alpha = 0.7;
 	explosion.play('explosion', 30, false, true);
-	explosionSound.play('',0,1,false);
+	explosionSound.play('',0,0.5,false);
 	enemy.kill();
+
+	player.damage(enemy.damageAmount);
+	shields.render();
 }
 
 function hitEnemy(enemy, bullet) {
@@ -75,7 +118,32 @@ function hitEnemy(enemy, bullet) {
 	explosion.body.velocity.y = enemy.body.velocity.y;
 	explosion.alpha = 0.7;
 	explosion.play('explosion', 30, false, true);
-	explosionSound.play('',0,1,false);
+	explosionSound.play('',0,0.5,false);
 	enemy.kill();
 	bullet.kill()
+
+	// Increase score
+	score += enemy.damageAmount * 10;
+	scoreText.render()
+}
+
+function restart () {
+	//  Reset the enemies
+	enemies1.callAll('kill');
+	game.time.events.remove(Enemy1Timer);
+	game.time.events.add(1000, launchEnemies1);
+
+	enemies2.callAll('kill');
+    game.time.events.remove(Enemy2Timer);
+    game.time.events.add(7000, launchEnemies2);
+
+	//  Revive the player
+	player.revive();
+	player.health = 100;
+	shields.render();
+	score = 0;
+	scoreText.render();
+
+	//  Hide the text
+	gameOver.visible = false;
 }
