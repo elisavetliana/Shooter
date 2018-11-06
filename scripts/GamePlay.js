@@ -2,7 +2,7 @@ var GamePlay = {
 	create: function(){
 		//Sounds
 		explosionSound = game.add.audio('explosionSound');
-		music = game.add.audio('suita');
+		music = game.add.audio('bgm');
 		gun1 = game.add.audio('gun1');
 
 		//Start background music
