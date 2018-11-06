@@ -31,20 +31,29 @@ body {
 		game.state.start('BootState');
 
 		//Default variables
-		var player;
-		var starfield;
-		var cursors;
 		var bank;
-		var shipTrail;
+		var player;
+		var cursors;
 		var bullets;
+		var starfield;
+		var shipTrail;
+		var explosions;
 		var fireButton;
 		var bulletTimer = 0;
+		
 		var ACCLERATION = 600;
 		var DRAG = 200;
 		var MAXSPEED = 400;
 
 		//Variables
 		var enemy1;
+		var enemy2;
+		var Enemy1Timer;
+		var Enemy2Timer;
+		var shields;
+		var gameOver;
+		var score = 0;
+		var scoreText;
 		
 		//Sound Variables
 		var music;
