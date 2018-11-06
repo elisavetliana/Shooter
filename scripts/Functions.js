@@ -62,7 +62,7 @@ function launchEnemies2() {
 		var enemy = enemies2.getFirstExists(false);
 		if (enemy) {
 			enemy.startingY = startingY;
-			enemy.reset(1200 + horizontalSpacing * i, game.height / 2);
+			enemy.reset(1000 + horizontalSpacing * i, game.height / 2);
 			enemy.body.velocity.x = horizontalSpeed;
 
 			//  Update function for each enemy
